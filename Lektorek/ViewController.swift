@@ -33,8 +33,12 @@ class ViewController: UIViewController {
         guard let searchTerm = searchField.text else { return }
         guard let url = getSearchURL(for: searchTerm) else { return }
         URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
-            if let jsonObj = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? NSDictionary {
-                print(jsonObj)
+            let decoder = JSONDecoder()
+            do {
+                let searchResults = try decoder.decode(SearchResults.self, from: data!)
+                print(searchResults.entriesFound)
+            } catch let err {
+                print(err)
             }
         }).resume()
     }
