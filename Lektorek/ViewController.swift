@@ -8,11 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
     @IBOutlet var searchField: UITextField!
+    
+    var entries = [Entry]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Szukaj"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
 
     func getSearchURL(for string: String) -> URL? {
@@ -29,17 +38,44 @@ class ViewController: UIViewController {
         return components.url
     }
     
-    @IBAction func searchPressed(_ sender: UIButton) {
-        guard let searchTerm = searchField.text else { return }
-        guard let url = getSearchURL(for: searchTerm) else { return }
-        URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+    func searchLektorek(for query: String) {
+        guard query.count > 0 else {
+            self.entries = []
+            self.tableView.reloadData()
+            return
+        }
+        guard let url = getSearchURL(for: query) else { return }
+        URLSession.shared.dataTask(with: url, completionHandler: {
+            [unowned self] (data, response, error) in
             let decoder = JSONDecoder()
             do {
                 let searchResults = try decoder.decode(SearchResults.self, from: data!)
-                print(searchResults.entriesFound)
+                self.entries = searchResults.results
             } catch let err {
                 print(err)
+                self.entries = []
+            }
+            DispatchQueue.main.async {
+                [unowned self] in
+                self.tableView.reloadData()
             }
         }).resume()
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let entry = entries[indexPath.row]
+        cell.textLabel?.text = entry.headword
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return entries.count
+    }
+}
+
+extension ViewController : UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        searchLektorek(for: searchController.searchBar.text!)
     }
 }
