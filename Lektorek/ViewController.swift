@@ -64,9 +64,21 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        if (indexPath.row >= entries.count) {
+            return cell
+        }
+        
         let entry = entries[indexPath.row]
         cell.textLabel?.text = entry.headword
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let detailController = storyboard?.instantiateViewController(withIdentifier: "headword") as? HeadwordDetailController {
+            detailController.entry = entries[indexPath.row]
+            navigationController?.pushViewController(detailController, animated: true)
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

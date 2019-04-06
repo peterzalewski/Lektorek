@@ -14,6 +14,7 @@
 		CAA4EB212252FE8C00103329 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAA4EB202252FE8C00103329 /* Assets.xcassets */; };
 		CAA4EB242252FE8C00103329 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA4EB222252FE8C00103329 /* LaunchScreen.storyboard */; };
 		CAB19BD7225455FA00A2E6B4 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB19BD6225455FA00A2E6B4 /* SearchResults.swift */; };
+		CAB19BD92257079200A2E6B4 /* HeadwordDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB19BD82257079200A2E6B4 /* HeadwordDetailController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		CAA4EB232252FE8C00103329 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CAA4EB252252FE8C00103329 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAB19BD6225455FA00A2E6B4 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
+		CAB19BD82257079200A2E6B4 /* HeadwordDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadwordDetailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				CAA4EB162252FE8900103329 /* AppDelegate.swift */,
 				CAA4EB182252FE8900103329 /* ViewController.swift */,
+				CAB19BD82257079200A2E6B4 /* HeadwordDetailController.swift */,
 				CAA4EB1A2252FE8900103329 /* Main.storyboard */,
 				CAA4EB202252FE8C00103329 /* Assets.xcassets */,
 				CAA4EB222252FE8C00103329 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAB19BD92257079200A2E6B4 /* HeadwordDetailController.swift in Sources */,
 				CAA4EB192252FE8900103329 /* ViewController.swift in Sources */,
 				CAA4EB1F2252FE8900103329 /* Lektorek.xcdatamodeld in Sources */,
 				CAB19BD7225455FA00A2E6B4 /* SearchResults.swift in Sources */,

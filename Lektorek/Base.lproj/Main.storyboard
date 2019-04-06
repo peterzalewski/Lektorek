@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -45,7 +46,70 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kc6-y2-ZsI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2460.8695652173915" y="721.875"/>
+            <point key="canvasLocation" x="2490" y="722"/>
+        </scene>
+        <!--Headword Detail Controller-->
+        <scene sceneID="dhK-3N-LGC">
+            <objects>
+                <viewController storyboardIdentifier="headword" id="Hba-eZ-Bcg" customClass="HeadwordDetailController" customModule="Lektorek" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L3V-pB-UAg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="czytać" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GiE-QJ-Pos">
+                                <rect key="frame" x="20" y="115" width="114" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="mSC-Mv-cLH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEFINITION" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCj-Dr-5VP">
+                                <rect key="frame" x="20" y="188" width="151" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="qfm-on-jrQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7an-La-jp5">
+                                <rect key="frame" x="20" y="217" width="374" height="20.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Definitions">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7an-La-jp5" firstAttribute="top" secondItem="KCj-Dr-5VP" secondAttribute="bottom" constant="8" symbolic="YES" id="8i6-qe-aqS"/>
+                            <constraint firstItem="7an-La-jp5" firstAttribute="trailing" secondItem="L3V-pB-UAg" secondAttribute="trailingMargin" id="A3G-Q0-LMI"/>
+                            <constraint firstItem="7an-La-jp5" firstAttribute="top" secondItem="KCj-Dr-5VP" secondAttribute="bottom" constant="8" id="FSq-Ye-e0e"/>
+                            <constraint firstItem="KCj-Dr-5VP" firstAttribute="leading" secondItem="7an-La-jp5" secondAttribute="leading" id="Fob-cH-YfI"/>
+                            <constraint firstItem="GiE-QJ-Pos" firstAttribute="leading" secondItem="KCj-Dr-5VP" secondAttribute="leading" id="JrP-ZA-g0W"/>
+                            <constraint firstItem="Cx2-KV-Dv9" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7an-La-jp5" secondAttribute="bottom" constant="512" id="NKA-wd-MsP"/>
+                            <constraint firstItem="GiE-QJ-Pos" firstAttribute="leading" secondItem="L3V-pB-UAg" secondAttribute="leadingMargin" id="d1i-uc-Uac"/>
+                            <constraint firstItem="GiE-QJ-Pos" firstAttribute="top" secondItem="Cx2-KV-Dv9" secondAttribute="top" constant="71" id="mWA-6H-nkw"/>
+                            <constraint firstItem="Cx2-KV-Dv9" firstAttribute="trailing" secondItem="KCj-Dr-5VP" secondAttribute="trailing" constant="243" id="tUy-IZ-Dzz"/>
+                            <constraint firstItem="KCj-Dr-5VP" firstAttribute="top" secondItem="GiE-QJ-Pos" secondAttribute="bottom" constant="32" id="zNK-Su-e2z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Cx2-KV-Dv9"/>
+                    </view>
+                    <connections>
+                        <outlet property="definitions" destination="7an-La-jp5" id="qNK-sL-XuI"/>
+                        <outlet property="headword" destination="GiE-QJ-Pos" id="htL-nd-9gO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OPi-bZ-XBF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3440.579710144928" y="721.875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TbX-ak-eHX">
