@@ -8,24 +8,6 @@
 
 import Foundation
 
-struct Entry: Codable {
-    var crossReferences: String
-    var definition: String
-    var headword: String
-    var highlights: String
-    var id: String
-    var rank: String
-    
-    enum CodingKeys: String, CodingKey {
-        case crossReferences = "crossreferences"
-        case definition = "embedded_definition"
-        case headword
-        case highlights
-        case id
-        case rank
-    }
-}
-
 struct SearchResults: Codable {
     var entriesFound: Int
     var currentPage: Int
@@ -33,7 +15,7 @@ struct SearchResults: Codable {
     var foundAs: String
     var hasNextPage: Bool
     var nextPage: Int
-    var results: [Entry]
+    var results: [Headword]
     
     enum CodingKeys: String, CodingKey {
         case entriesFound = "current_entries_found"

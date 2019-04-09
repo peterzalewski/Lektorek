@@ -9,7 +9,7 @@
 import UIKit
 
 class HeadwordDetailController: UIViewController {
-    var entry: Entry?
+    var entry: Headword?
     @IBOutlet var headword: UILabel!
     @IBOutlet var definitions: UILabel!
     
@@ -17,13 +17,27 @@ class HeadwordDetailController: UIViewController {
         super.viewDidLoad()
 
         guard let entry = entry else { return }
-        print(entry)
         
         headword?.text = entry.headword
         
         if let definitionData = entry.definition.data(using: .utf16, allowLossyConversion: false) {
             definitions?.attributedText = try? NSAttributedString(data: definitionData, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
             definitions?.sizeToFit()
+        }
+
+        entry.loadGrammaticalData() {
+            if (entry.isNoun) {
+                print("Noun")
+            }
+            if (entry.isAdjective) {
+                print("Adjective")
+            }
+            if (entry.isPerfectiveVerb) {
+                print("Perfective Verb")
+            }
+            if (entry.isImperfectiveVerb) {
+                print("Imperfective Verb")
+            }
         }
     }
 }

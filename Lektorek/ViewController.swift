@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UITableViewController {
     @IBOutlet var searchField: UITextField!
     
-    var entries = [Entry]()
+    var entries = [Headword]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -15,6 +15,7 @@
 		CAA4EB242252FE8C00103329 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA4EB222252FE8C00103329 /* LaunchScreen.storyboard */; };
 		CAB19BD7225455FA00A2E6B4 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB19BD6225455FA00A2E6B4 /* SearchResults.swift */; };
 		CAB19BD92257079200A2E6B4 /* HeadwordDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB19BD82257079200A2E6B4 /* HeadwordDetailController.swift */; };
+		CAF8E633225C32530003F193 /* Headword.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF8E632225C32530003F193 /* Headword.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		CAA4EB252252FE8C00103329 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAB19BD6225455FA00A2E6B4 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		CAB19BD82257079200A2E6B4 /* HeadwordDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadwordDetailController.swift; sourceTree = "<group>"; };
+		CAF8E632225C32530003F193 /* Headword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headword.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				CAA4EB252252FE8C00103329 /* Info.plist */,
 				CAA4EB1D2252FE8900103329 /* Lektorek.xcdatamodeld */,
 				CAB19BD6225455FA00A2E6B4 /* SearchResults.swift */,
+				CAF8E632225C32530003F193 /* Headword.swift */,
 			);
 			path = Lektorek;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				CAB19BD92257079200A2E6B4 /* HeadwordDetailController.swift in Sources */,
 				CAA4EB192252FE8900103329 /* ViewController.swift in Sources */,
 				CAA4EB1F2252FE8900103329 /* Lektorek.xcdatamodeld in Sources */,
+				CAF8E633225C32530003F193 /* Headword.swift in Sources */,
 				CAB19BD7225455FA00A2E6B4 /* SearchResults.swift in Sources */,
 				CAA4EB172252FE8900103329 /* AppDelegate.swift in Sources */,
 			);
