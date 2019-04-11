@@ -23,7 +23,16 @@ class Headword: Codable {
     var id: String
     var rank: String
     
-    private var grammarDetails = [GrammarCategory: [String: String]]()
+    lazy var attributedDefinition: NSAttributedString? = {
+        if let definitionData = definition.data(using: .utf16, allowLossyConversion: false) {
+            if let attributedText = try? NSAttributedString(data: definitionData, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+                return attributedText
+            }
+        }
+        return nil
+    }()
+    
+    var grammarDetails = [GrammarCategory: [String: String]]()
     
     private func isGrammarCategory(_ category: GrammarCategory) -> Bool {
         if let details = grammarDetails[category] {
