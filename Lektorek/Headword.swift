@@ -80,7 +80,12 @@ class Headword: Codable {
                 defer {
                     workerGroup.leave()
                 }
+                
+                // The Lektorek API returns 204 when no grammar details are present, so filter on 200
+                guard let response = response as? HTTPURLResponse else { return }
+                guard response.statusCode == 200 else { return }
                 guard let data = data else { return }
+                
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: [])
                     if let object = json as? [[String: String]] {

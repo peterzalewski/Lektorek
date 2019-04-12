@@ -63,15 +63,15 @@
 			isa = PBXGroup;
 			children = (
 				CAA4EB162252FE8900103329 /* AppDelegate.swift */,
-				CAA4EB182252FE8900103329 /* ViewController.swift */,
-				CAB19BD82257079200A2E6B4 /* HeadwordDetailController.swift */,
-				CAA4EB1A2252FE8900103329 /* Main.storyboard */,
 				CAA4EB202252FE8C00103329 /* Assets.xcassets */,
-				CAA4EB222252FE8C00103329 /* LaunchScreen.storyboard */,
-				CAA4EB252252FE8C00103329 /* Info.plist */,
-				CAA4EB1D2252FE8900103329 /* Lektorek.xcdatamodeld */,
-				CAB19BD6225455FA00A2E6B4 /* SearchResults.swift */,
 				CAF8E632225C32530003F193 /* Headword.swift */,
+				CAB19BD82257079200A2E6B4 /* HeadwordDetailController.swift */,
+				CAA4EB252252FE8C00103329 /* Info.plist */,
+				CAA4EB222252FE8C00103329 /* LaunchScreen.storyboard */,
+				CAA4EB1D2252FE8900103329 /* Lektorek.xcdatamodeld */,
+				CAA4EB1A2252FE8900103329 /* Main.storyboard */,
+				CAB19BD6225455FA00A2E6B4 /* SearchResults.swift */,
+				CAA4EB182252FE8900103329 /* ViewController.swift */,
 			);
 			path = Lektorek;
 			sourceTree = "<group>";
